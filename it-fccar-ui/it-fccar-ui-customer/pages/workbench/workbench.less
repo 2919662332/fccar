@@ -1,0 +1,93 @@
+@import url('../../style.less');
+page {
+	font-family: @ff-1;
+}
+.order-process{
+	min-height: 30;
+	font-size: 28rpx;
+	color: cornflowerblue;
+	line-height: 1.6;
+	box-sizing: border-box;
+	padding: 25rpx 30rpx 25rpx 30rpx;
+	width: 750rpx;
+	background-color: rgba(255, 255, 255, 0.93);
+	position: absolute;
+	z-index: 1000;
+	top: 0px;
+	z-index: 1000;
+}
+
+.map{
+	width: 100%;
+}
+.location {
+	width: 50rpx;
+	height: 50rpx;
+	position: absolute;
+	right: 45rpx;
+	bottom: 500rpx;
+}
+
+.panel{
+	width: 700rpx;
+	margin-left: 25rpx;
+	margin-right: 25rpx;
+	background-color: #fff;
+	min-height: 115px;
+	position: absolute;
+	bottom: 25rpx;
+	border-radius: 15rpx;
+	font-size: 28rpx;
+	color: @fc-2;
+	line-height: 1.6;
+	box-sizing: border-box;
+	padding: 30rpx 0rpx;
+	.from {
+		display: flex;
+		margin: 0 45rpx 25rpx 45rpx;
+		&::before {
+			display: block;
+			content: '';
+			width: 20rpx;
+			height: 20rpx;
+			border-radius: 10rpx;
+			background-color: @bgc-7;
+			margin-top: 14rpx;
+			margin-right: 17rpx;
+		}
+	}
+	.to {
+		display: flex;
+		background-color: @bgc-11;
+		padding: 20rpx 25rpx;
+		border-radius: 10rpx;
+		font-weight: bold;
+		font-size: 25rpx;
+		margin: 0 20rpx;
+		&::before {
+			display: block;
+			content: '';
+			width: 20rpx;
+			height: 20rpx;
+			border-radius: 10rpx;
+			background-color: @bgc-8;
+			margin-top: 14rpx;
+			margin-right: 17rpx;
+		}
+	}
+	.btn{
+		background-color: @btnc-1;
+		color: #fff;
+		border-radius: 30px;
+		width: 95%;font-size: 16px;
+		margin-top: 30rpx;
+		font-size: 12px;
+		height: 30px;
+		&::after {
+			border: none;
+		}
+		&:active{
+			background-color: @btnac-1;
+		}
+	}
+}
