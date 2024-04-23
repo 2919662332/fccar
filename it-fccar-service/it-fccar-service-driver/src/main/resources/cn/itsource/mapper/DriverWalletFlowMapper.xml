@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.DriverWalletFlowMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.DriverWalletFlow">
+        <id column="id" property="id" />
+        <result column="notes" property="notes" />
+        <result column="amount" property="amount" />
+        <result column="flow_type" property="flowType" />
+        <result column="create_time" property="createTime" />
+        <result column="income" property="income" />
+        <result column="wallet_id" property="walletId" />
+        <result column="wallet_amount" property="walletAmount" />
+        <result column="unique_no" property="uniqueNo" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="version" property="version" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, notes, amount, flow_type, create_time, income, wallet_id, wallet_amount, unique_no, update_time, deleted, version
+    </sql>
+
+</mapper>

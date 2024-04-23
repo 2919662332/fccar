@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      config:
+        server-addr: @nacos.addr@ #配置中心
+        file-extension: yaml #配置文件格式
+        prefix: @nacos.driver.prefix@ #配置前缀 ，默认使用sring.application.name
+        group: @nacos.group@ #默认分组
+        namespace: @nacos.namespace@
+        shared-configs:
+          - data-id: it-fccar-share.yaml

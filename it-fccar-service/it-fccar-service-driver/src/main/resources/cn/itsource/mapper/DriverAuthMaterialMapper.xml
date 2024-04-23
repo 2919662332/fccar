@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.DriverAuthMaterialMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.DriverAuthMaterial">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="gender" property="gender" />
+        <result column="id_number" property="idNumber" />
+        <result column="birthday" property="birthday" />
+        <result column="real_auth_status" property="realAuthStatus" />
+        <result column="idcard_address" property="idcardAddress" />
+        <result column="idcard_expire" property="idcardExpire" />
+        <result column="idcard_front" property="idcardFront" />
+        <result column="idcard_back" property="idcardBack" />
+        <result column="idcard_holding" property="idcardHolding" />
+        <result column="car_class" property="carClass" />
+        <result column="drcard_expire" property="drcardExpire" />
+        <result column="drcard_issue_date" property="drcardIssueDate" />
+        <result column="drcard_front" property="drcardFront" />
+        <result column="drcard_back" property="drcardBack" />
+        <result column="drcard_holding" property="drcardHolding" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="version" property="version" />
+        <result column="audit_time" property="auditTime" />
+        <result column="audit_user_id" property="auditUserId" />
+        <result column="audit_remark" property="auditRemark" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="mail_address" property="mailAddress" />
+        <result column="contact_name" property="contactName" />
+        <result column="contact_phone" property="contactPhone" />
+        <result column="driver_id" property="driverId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, gender, id_number, birthday, real_auth_status, idcard_address, idcard_expire, idcard_front, idcard_back, idcard_holding, car_class, drcard_expire, drcard_issue_date, drcard_front, drcard_back, drcard_holding, create_time, update_time, deleted, version, audit_time, audit_user_id, audit_remark, phone, email, mail_address, contact_name, contact_phone, driver_id
+    </sql>
+
+</mapper>

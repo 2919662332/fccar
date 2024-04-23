@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.OrderBillMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.OrderBill">
+        <id column="id" property="id" />
+        <result column="real_order_amount" property="realOrderAmount" />
+        <result column="real_pay_amount" property="realPayAmount" />
+        <result column="toll_amount" property="tollAmount" />
+        <result column="favour_amount" property="favourAmount" />
+        <result column="incentive_amount" property="incentiveAmount" />
+        <result column="voucher_amount" property="voucherAmount" />
+        <result column="order_detail" property="orderDetail" />
+        <result column="base_mileage" property="baseMileage" />
+        <result column="base_mileage_amount" property="baseMileageAmount" />
+        <result column="exceed_base_mileage_amount" property="exceedBaseMileageAmount" />
+        <result column="mileage_amount" property="mileageAmount" />
+        <result column="waiting_minute" property="waitingMinute" />
+        <result column="free_base_waiting_minute" property="freeBaseWaitingMinute" />
+        <result column="waiting_amount" property="waitingAmount" />
+        <result column="free_base_return_mileage" property="freeBaseReturnMileage" />
+        <result column="exceed_base_return_every_km_amount" property="exceedBaseReturnEveryKmAmount" />
+        <result column="exceed_every_minute_amount" property="exceedEveryMinuteAmount" />
+        <result column="return_amont" property="returnAmont" />
+        <result column="order_no" property="orderNo" />
+        <result column="other_amount" property="otherAmount" />
+        <result column="parking_amount" property="parkingAmount" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="version" property="version" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, real_order_amount, real_pay_amount, toll_amount, favour_amount, incentive_amount, voucher_amount, order_detail, base_mileage, base_mileage_amount, exceed_base_mileage_amount, mileage_amount, waiting_minute, free_base_waiting_minute, waiting_amount, free_base_return_mileage, exceed_base_return_every_km_amount, exceed_every_minute_amount, return_amont, order_no, other_amount, parking_amount, create_time, update_time, deleted, version
+    </sql>
+
+</mapper>

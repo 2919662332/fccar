@@ -1,0 +1,114 @@
+hostpath:
+  addr: 192.168.136.128
+
+spring:
+  redis:
+    database: 0
+    host: ${hostpath.addr}
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-wait: 2000ms
+        min-idle: 10
+        max-idle: 10
+  cloud: #注册到Nacos
+    nacos:
+      discovery:
+        server-addr: ${hostpath.addr}:8848  #设置Nacos服务器的地址
+        namespace: dev  #设置Nacos的命名空间
+        username: nacos
+        password: nacos
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /doc.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs/default
+
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+    swagger-model-name: 飞驰专车
+  basic:
+    enable: true
+    username: fccar
+    password: fccar
+feign:
+  sentinel:
+    enabled: true
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token 名称（同时也是 cookie 名称）
+  token-name: satoken
+  # token 有效期（单位：秒） 默认30天，-1 代表永久有效
+  timeout: 2592000
+  # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+  active-timeout: -1
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: true
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+  # 排除路径
+  excludePaths:
+    - "/app/login/**"
+    - "/app/customer/**"
+    - "/app/driver/**"
+    - "/app/order/**"
+    - "/feign/create"
+    - "/feign/createOrder"
+    - "/manager/login/admin"
+    - "/manager/driver/**"
+    - "/manager/driverAuthMaterial/**"
+    - "/common/upload/oos"
+fccar:
+  real:
+    host: "https://jmidcardv1.market.alicloudapi.com"
+    path: "/idcard/validate"
+    method: "POST"
+    appcode: 38846753cb42485d846d5324cce1cd41
+  upload:
+    accessKeyId: LTAI5tApJvKXwLLkMDVcnB8Z
+    accessKeySecret: uIsVHn1fPGqJB16iwEeUb8YnXnXcd6
+    endpoint: "https://oss-cn-chengdu.aliyuncs.com"
+    bucket: fccar-tang
+    uploadUrl: "https://%s.%s/%s"
+  wx:
+    appid: wx7189439290bc3bbc
+    appSecret: a15bc4164c75b63187320369cc814dc1
+    url: "https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code"
+    accessTokenUrl: "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s"
+    phoneUrl: "https://api.weixin.qq.com/wxa/business/getuserphonenumber?access_token=ACCESS_TOKEN"
+
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: ${spring.application.name}-tx-group #it-fccar-service-driver-tx-group
+  #对应seataServer.properties中的service.vgroupMapping.it-drive-service-driver-tx-group=default
+  config:
+    type: nacos
+    nacos:
+      server-addr: ${NACOS_HOST:192.168.136.128}:${NACOS_PORT:8848}
+      username: nacos
+      password: nacos #账号再nacos管理界面配置
+      namespace: dev #取pom.xml中的命名空间
+      data-id: seataServer.properties
+      group: DEFAULT_GROUP #重要，和seataServer.properties保持一样
+  registry:
+    type: nacos
+    nacos:
+      application: service-seata #seata的服务名
+      server-addr: ${NACOS_HOST:192.168.136.128}:${NACOS_PORT:8848}
+      username: nacos
+      password: nacos #账号再nacos管理界面配置
+      namespace: dev #取pom.xml中的命名空间
+      group: DEFAULT_GROUP
+  enable-auto-data-source-proxy: true #开启seata的datasource自动代理

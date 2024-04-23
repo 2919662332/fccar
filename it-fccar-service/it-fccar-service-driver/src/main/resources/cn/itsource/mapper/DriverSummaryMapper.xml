@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.DriverSummaryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.DriverSummary">
+        <id column="id" property="id" />
+        <result column="level" property="level" />
+        <result column="total_orders" property="totalOrders" />
+        <result column="week_orders" property="weekOrders" />
+        <result column="good_comments" property="goodComments" />
+        <result column="appeal" property="appeal" />
+        <result column="total_complaint" property="totalComplaint" />
+        <result column="today_total_cancel" property="todayTotalCancel" />
+        <result column="drive_duration" property="driveDuration" />
+        <result column="trade_orders" property="tradeOrders" />
+        <result column="today_trade_orders" property="todayTradeOrders" />
+        <result column="today_complaint" property="todayComplaint" />
+        <result column="today_cancel" property="todayCancel" />
+        <result column="today_income" property="todayIncome" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="version" property="version" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, level, total_orders, week_orders, good_comments, appeal, total_complaint, today_total_cancel, drive_duration, trade_orders, today_trade_orders, today_complaint, today_cancel, today_income, create_time, update_time, deleted, version
+    </sql>
+
+</mapper>

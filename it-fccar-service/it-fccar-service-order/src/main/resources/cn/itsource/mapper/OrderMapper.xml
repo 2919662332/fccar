@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.Order">
+        <id column="id" property="id" />
+        <result column="order_no" property="orderNo" />
+        <result column="customer_id" property="customerId" />
+        <result column="start_place" property="startPlace" />
+        <result column="end_place" property="endPlace" />
+        <result column="expects_mileage" property="expectsMileage" />
+        <result column="real_mileage" property="realMileage" />
+        <result column="return_mileage" property="returnMileage" />
+        <result column="expects_order_amount" property="expectsOrderAmount" />
+        <result column="favour_amount" property="favourAmount" />
+        <result column="incentive_amount" property="incentiveAmount" />
+        <result column="real_order_amount" property="realOrderAmount" />
+        <result column="driver_id" property="driverId" />
+        <result column="accept_time" property="acceptTime" />
+        <result column="arrive_time" property="arriveTime" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="car_plate" property="carPlate" />
+        <result column="car_type" property="carType" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+        <result column="expect_minutes" property="expectMinutes" />
+        <result column="start_place_longitude" property="startPlaceLongitude" />
+        <result column="start_place_latitude" property="startPlaceLatitude" />
+        <result column="end_place_longitude" property="endPlaceLongitude" />
+        <result column="end_place_latiude" property="endPlaceLatiude" />
+        <result column="incentive_fee_status" property="incentiveFeeStatus" />
+        <result column="driver_name" property="driverName" />
+        <result column="driver_phone" property="driverPhone" />
+        <result column="driver_photo" property="driverPhoto" />
+        <result column="customer_name" property="customerName" />
+        <result column="customer_phone" property="customerPhone" />
+        <result column="customer_photo" property="customerPhoto" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="version" property="version" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_no, customer_id, start_place, end_place, expects_mileage, real_mileage, return_mileage, expects_order_amount, favour_amount, incentive_amount, real_order_amount, driver_id, accept_time, arrive_time, start_time, end_time, car_plate, car_type, status, remark, expect_minutes, start_place_longitude, start_place_latitude, end_place_longitude, end_place_latiude, incentive_fee_status, driver_name, driver_phone, driver_photo, customer_name, customer_phone, customer_photo, create_time, update_time, deleted, version
+    </sql>
+
+</mapper>

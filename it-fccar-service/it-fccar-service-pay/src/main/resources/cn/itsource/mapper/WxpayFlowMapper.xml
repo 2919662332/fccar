@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.WxpayFlowMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.WxpayFlow">
+        <id column="id" property="id" />
+        <result column="amount" property="amount" />
+        <result column="sp_appid" property="spAppid" />
+        <result column="sp_mchid" property="spMchid" />
+        <result column="bank_type" property="bankType" />
+        <result column="out_trade_no" property="outTradeNo" />
+        <result column="payer_openid" property="payerOpenid" />
+        <result column="user_id" property="userId" />
+        <result column="success_time" property="successTime" />
+        <result column="trade_state" property="tradeState" />
+        <result column="trade_state_desc" property="tradeStateDesc" />
+        <result column="trade_type" property="tradeType" />
+        <result column="attach" property="attach" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, amount, sp_appid, sp_mchid, bank_type, out_trade_no, payer_openid, user_id, success_time, trade_state, trade_state_desc, trade_type, attach
+    </sql>
+
+</mapper>

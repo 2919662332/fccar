@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.DriverMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.Driver">
+        <id column="id" property="id" />
+        <result column="phone" property="phone" />
+        <result column="home_address" property="homeAddress" />
+        <result column="home_address_longitude" property="homeAddressLongitude" />
+        <result column="home_address_latitude" property="homeAddressLatitude" />
+        <result column="archive" property="archive" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="version" property="version" />
+        <result column="open_id" property="openId" />
+        <result column="bit_state" property="bitState" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, phone, home_address, home_address_longitude, home_address_latitude, archive, create_time, update_time, deleted, version, open_id, bit_state
+    </sql>
+
+</mapper>

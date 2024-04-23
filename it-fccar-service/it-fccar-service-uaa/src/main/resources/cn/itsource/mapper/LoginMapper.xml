@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mapper.LoginMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.pojo.domain.Login">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="type" property="type" />
+        <result column="enabled" property="enabled" />
+        <result column="avatar" property="avatar" />
+        <result column="admin" property="admin" />
+        <result column="nick_name" property="nickName" />
+        <result column="open_id" property="openId" />
+        <result column="hx_id" property="hxId" />
+        <result column="name" property="name" />
+        <result column="phone" property="phone" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="deleted" property="deleted" />
+        <result column="version" property="version" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, username, password, type, enabled, avatar, admin, nick_name, open_id, hx_id, name, phone, create_time, update_time, deleted, version
+    </sql>
+    <select id="selectPermissionByLoginId" resultType="java.lang.String">
+        select tp.sn from t_login_role lr
+              JOIN t_role_permission rp ON lr.role_id=rp.role_id
+              JOIN t_permission tp on rp.permission_id = tp.id
+        WHERE lr.login_id = #{login_id}
+    </select>
+</mapper>

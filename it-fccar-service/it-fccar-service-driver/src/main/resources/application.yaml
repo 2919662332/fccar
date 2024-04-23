@@ -1,0 +1,57 @@
+#server:
+#  port: 10020
+#spring:
+#  application:
+#    name: it-fccar-service-driver
+#  # mybaits-plus数据源配置
+#  datasource:
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://192.168.42.130:3306/fc_driver?serverTimezone=Asia/Shanghai&characterEncoding=utf8
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource # 配置阿里的连接池
+#    druid: # Druid 【监控】相关的全局配置
+#      # 配置初始化大小、最小、最大
+#      initial-size: 5
+#      minIdle: 10
+#      max-active: 20
+#      # 配置获取连接等待超时的时间(单位：毫秒)
+#      max-wait: 60000
+#      ########### 启用内置过滤器（第一个 stat必须，否则监控不到SQL）##########
+#      filters: stat,wall,log4j2
+#      web-stat-filter:
+#        enabled: true
+#      stat-view-servlet:
+#        enabled: true
+#        allow: # 设置白名单，不填则允许所有访问
+#        url-pattern: /druid/*
+#        login-username: fccar # 控制台管理用户名和密码
+#        login-password: fccar
+#      filter:
+#        stat:
+#          enabled: true
+#          log-slow-sql: true # 慢 SQL 记录
+#          slow-sql-millis: 2000
+#          merge-sql: true
+#        wall:
+#          config:
+#            multi-statement-allow: true
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.42.130:8848
+#        namespace: dev
+#        username: nacos
+#        password: nacos
+## mybatis-plus配置
+#mybatis-plus:
+#  type-aliases-package: cn.itsource.domain,cn.itsource.query #别名包扫描
+#  mapper-locations: classpath:cn/itsource/mapper/*Mapper.xml #SQL映射文件扫描
+#  global-config:
+#    db-config: #设置逻辑删除,通过把delete字段改成0而不是直接删除数据
+#      logic-not-delete-value: 0
+#      logic-delete-value: 1
+#  configuration:
+#    map-underscore-to-camel-case: true # 开启驼峰命名转换法
+#    cache-enabled: false #禁用缓存
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 配置日志，在控制台输出SQL
